@@ -1,0 +1,99 @@
+/* Container */
+.user-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title */
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  /* Grid layout */
+  .user-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  /* User card */
+  .user-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Header */
+  .user-header {
+    margin-bottom: 15px;
+  }
+  
+  .user-header h2 {
+    margin: 0;
+    color: #2980b9;
+    font-size: 1.5rem;
+  }
+  
+  .user-header .username {
+    font-style: italic;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+  }
+  
+  /* User info */
+  .user-info {
+    line-height: 1.8;
+  }
+  
+  .user-info p {
+    margin: 5px 0;
+    color: #34495e;
+  }
+  
+  .user-info a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .user-info a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer */
+  .user-footer {
+    margin-top: 15px;
+    text-align: right;
+  }
+  
+  .action-btn {
+    background: #2980b9;
+    color: #ffffff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-btn:hover {
+    background: #1abc9c;
+  }
+  
