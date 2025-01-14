@@ -5,6 +5,7 @@ import { SettingsComponent } from './component/settings/settings.component';
 import { ChatComponent } from './component/chat/chat.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
+import { UserdetailComponent } from './component/user/userdetail/userdetail.component';
 
 export const routes: Routes = [
     {
@@ -21,6 +22,11 @@ export const routes: Routes = [
         path: 'user',
         pathMatch: 'full',
         component: UserComponent
+    },
+    {
+        path: 'user/:id',
+        pathMatch: 'full',
+        component: UserdetailComponent
     },
     {
         path: 'settings',

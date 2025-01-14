@@ -18,4 +18,9 @@ export class HttpService {
   
   }
 
+  getOneUserData(id: number): Observable<Object>{
+
+    return this.client.get(`${this.url}/${id}`);
+  
+  }
 }
