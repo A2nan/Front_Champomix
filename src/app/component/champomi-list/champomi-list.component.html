@@ -132,6 +132,18 @@
 
     <section>
       <h2>Champomis</h2>
+
+      <h3>Add New Champomi</h3>
+      <form (ngSubmit)="createChampomi(ajouterChampomi)">
+        <label for="champomi-name">Name:</label>
+        <input type="text" id="champomi-name" (ngModel)="ajouterChampomi" name="name" required>
+
+        <label for="champomi-description">Description:</label>
+        <input type="text" id="champomi-description" (ngModel)="ajouterChampomi" name="description" required>
+
+        <button type="submit">Add Champomi</button>
+      </form>
+
       <ul>
         <li *ngFor="let champomi of champomis">
           {{ champomi.name }}
@@ -155,10 +167,10 @@
       <h3>Add New User</h3>
       <form (ngSubmit)="createUser(ajouterUser)">
         <label for="pseudo">Pseudo:</label>
-        <input type="text" id="pseudo" [(ngModel)]="ajouterUser.pseudo" name="pseudo" required>
+        <input type="text" id="pseudo" (ngModel)="ajouterUser" name="pseudo" required>
 
         <label for="password">Password:</label>
-        <input type="password" id="password" [(ngModel)]="ajouterUser.password" name="password" required>
+        <input type="password" id="password" (ngModel)="ajouterUser" name="password" required>
 
         <button type="submit">Create User</button>
       </form>
@@ -182,6 +194,18 @@
 
     <section>
       <h2>Orders</h2>
+
+      <h3>Add New Order</h3>
+      <form (ngSubmit)="createOrder(ajouterOrder)">
+        <label for="order-id">Order ID:</label>
+        <input type="text" id="order-id" (ngModel)="ajouterOrder" name="id" required>
+
+        <label for="user-id">User ID:</label>
+        <input type="text" id="user-id" (ngModel)="ajouterOrder" name="user_id" required>
+
+        <button type="submit">Add Order</button>
+      </form>
+
       <ul>
         <li *ngFor="let order of orders">
           Order #{{ order.id }}

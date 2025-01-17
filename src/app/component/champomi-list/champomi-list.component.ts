@@ -15,6 +15,8 @@ export class ChampomiListComponent implements OnInit {
   users: any[] = [];
   orders: any[] = [];
   ajouterUser: any = {};
+  ajouterOrder: any = {};
+  ajouterChampomi: any = {};
 
   selectedChampomi: any = null;
   selectedUser: any = null;
@@ -81,8 +83,8 @@ export class ChampomiListComponent implements OnInit {
     });
   }
 
-  createChampomi(champomi: any): void {
-    this.httpService.postChampomi(champomi).subscribe(() => {
+  createChampomi(ajouterChampomi: any): void {
+    this.httpService.postChampomi(ajouterChampomi).subscribe(() => {
       this.loadChampomis();
     });
   }
@@ -93,8 +95,8 @@ export class ChampomiListComponent implements OnInit {
     });
   }
 
-  createOrder(order: any): void {
-    this.httpService.postOrder(order).subscribe(() => {
+  createOrder(ajouterOrder: any): void {
+    this.httpService.postOrder(ajouterOrder).subscribe(() => {
       this.loadOrders();
     });
   }
