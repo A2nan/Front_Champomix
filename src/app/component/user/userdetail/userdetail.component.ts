@@ -27,7 +27,7 @@ export class UserdetailComponent {
 
   fetchUserData (){
     if(this.userId) {
-      this.HttpService.getOneChampomi(this.userId).subscribe((data) => {
+      this.HttpService.getOneUserData(this.userId).subscribe((data) => {
         this.userDetail = data;
         console.log('Détail de l’utilisateur : ', this.userDetail);
       });

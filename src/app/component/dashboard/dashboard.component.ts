@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
   public users: any = [];
 
   ngOnInit(): void {
-    this.httpService.getChampomi().subscribe((data) => {
+    this.httpService.getAllUsers().subscribe((data) => {
       this.users = data;
     });
   }

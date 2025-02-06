@@ -14,11 +14,11 @@ export class UserComponent implements OnInit{
 
   private httpService: HttpService = inject(HttpService)
 
-  public Champomi: any = []
+  public users: any = []
 
   ngOnInit(): void {
-    this.httpService.getChampomi().subscribe(data =>{
-      this.Champomi = data
+    this.httpService.getAllUsers().subscribe(data =>{
+      this.users = data
     });
   }
 }

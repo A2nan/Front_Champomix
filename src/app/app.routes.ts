@@ -3,20 +3,20 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './component/user/user.component';
 import { SettingsComponent } from './component/settings/settings.component';
 import { ChatComponent } from './component/chat/chat.component';
-import { ChampomiListComponent } from './component/champomi-list/champomi-list.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 import { UserdetailComponent } from './component/user/userdetail/userdetail.component';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'Champomi',
+        redirectTo: 'dashboard',
         pathMatch: 'full',
     },
     {
-        path: 'Champomi',
+        path: 'dashboard',
         pathMatch: 'full',
-        component: ChampomiListComponent
+        component: DashboardComponent
     },
     {
         path: 'user',

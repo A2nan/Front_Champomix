@@ -1,23 +1,26 @@
-<div class="Champomi-container">
+<div class="user-container">
   <h1 class="title">Liste des utilisateurs</h1>
-  <div class="Champomi-grid">
-    <div class="Champomi-card" *ngFor="let Champomi of Champomi">
-      <div class="Champomi-header">
-        <h2>{{ Champomi.name }}</h2>
-        <p class="Champominame">{{ Champomi.Champominame }}</p>
+  <div class="user-grid">
+    <div class="user-card" *ngFor="let user of users">
+      <div class="user-header">
+        <h2>{{ user.name }}</h2>
+        <p class="username">{{ user.username }}</p>
       </div>
-      <div class="Champomi-info">
-        <p><strong>Email :</strong> {{ Champomi.email }}</p>
-        <p><strong>Téléphone :</strong> {{ Champomi.phone }}</p>
+
+      <div class="user-info">
+        <p><strong>Email :</strong> {{ user.email }}</p>
+        <p><strong>Téléphone :</strong> {{ user.phone }}</p>
         <p><strong>Adresse :</strong> 
-          {{ Champomi.address.street }}, {{ Champomi.address.city }} ({{ Champomi.address.zipcode }})
+          {{ user.address.street }}, {{ user.address.city }} ({{ user.address.zipcode }})
         </p>
-        <p><strong>Société :</strong> {{ Champomi.company.name }}</p>
-        <p><strong>Slogan :</strong> "{{ Champomi.company.catchPhrase }}"</p>
+        <p><strong>Société :</strong> {{ user.company.name }}</p>
+        <p><strong>Slogan :</strong> "{{ user.company.catchPhrase }}"</p>
         <p><strong>Website :</strong> 
+          <a href="http://{{ user.website }}" target="_blank">{{ user.website }}</a>
         </p>
       </div>
-      <div class="Champomi-footer">
+
+      <div class="user-footer">
         <button class="action-btn">Voir Profil</button>
       </div>
     </div>
