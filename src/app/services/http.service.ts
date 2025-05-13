@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class HttpService {
 
   private client: HttpClient = inject(HttpClient);
-  private readonly url: string = 'https://tp-web-api-rest.onrender.com'
+  private readonly url: string = 'http://backend:5000'; // URL du service Docker backend
 
   constructor() { }
 
