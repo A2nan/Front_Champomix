@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environments'; // 👈 Import des variables d’environnement
+import { environment } from '../../environments/environments';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ import { environment } from '../../environments/environments'; // 👈 Import de
 export class HttpService {
 
   private client: HttpClient = inject(HttpClient);
-  private readonly url: string = environment.apiUrl; // 👈 Utilisation de la variable d'environnement
+  private readonly url: string = environment.apiUrl;
 
   constructor() { }
 
