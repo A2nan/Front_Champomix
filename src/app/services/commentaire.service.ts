@@ -19,4 +19,10 @@ export class CommentaireService {
   getCommentaires(): Observable<Commentaire[]> {
     return this.http.get<Commentaire[]>(this.apiUrl);
   }
+  addCommentaire(nom: string, commentaire: string, image: string): Observable<Commentaire> {
+  return this.http.post<Commentaire>(this.apiUrl, { nom, commentaire, image });
+}
+  deleteCommentaire(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
 }

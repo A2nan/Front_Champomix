@@ -13,4 +13,17 @@ router.get('/', async (req, res) => {
   }
 });
 
+// POST - ajouter un commentaire
+router.post('/', async (req, res) => {
+  const { nom, commentaire, image } = req.body;
+  try {
+    const nouveau = new Commentaire({ nom, commentaire, image });
+    const saved = await nouveau.save();
+    res.status(201).json(saved);
+  } catch (err) {
+    res.status(400).json({ message: 'Erreur lors de l\'ajout du commentaire.' });
+  }
+});
+
+
 export default router;
