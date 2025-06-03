@@ -1,27 +1,28 @@
-# AngularProject2
+Champomix Front (Angular)
+Descriptif rapide du projet
+Ce projet Angular est une interface simple pour interagir avec l’API Champomix.
+Il permet de :
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
+Visualiser la liste des produits Champomi
 
-## Development server
+Ajouter un nouveau produit
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Supprimer un produit
 
-## Code scaffolding
+L’application communique avec l’API REST déployée et utilise les fonctionnalités de base d’Angular (composants, services HTTP, etc.).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Éléments nécessaires pour lancer le projet en local
+Node.js et npm installés
 
-## Build
+Angular CLI installé (npm install -g @angular/cli)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Cloner le projet
 
-## Running unit tests
+Installer les dépendances avec npm install
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Lancer le projet avec ng serve
 
-## Running end-to-end tests
+L'application sera accessible sur http://localhost:4200/
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+URL de déploiement du projet
+https://angular-epsi.onrender.com
