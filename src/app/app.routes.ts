@@ -43,6 +43,12 @@ export const routes: Routes = [
         pathMatch: 'full',
         component: PageNotFoundComponent
     },     
+
+    {
+        path: 'commentaires',
+        loadComponent: () => import('./component/Commentaires/commentaires.component').then(c => c.CommentairesComponent)
+    },
+
     {
         path: '**',
         component: PageNotFoundComponent
