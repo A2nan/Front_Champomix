@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environments'; // 👈 Import des variables d’environnement
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ import { Observable } from 'rxjs';
 export class HttpService {
 
   private client: HttpClient = inject(HttpClient);
-  private readonly url: string = 'http://backend:5000'; // URL du service Docker backend
+  private readonly url: string = environment.apiUrl; // 👈 Utilisation de la variable d'environnement
 
   constructor() { }
 
@@ -29,7 +31,7 @@ export class HttpService {
   }
 
   postChampomi(champomi: any): Observable<Object> {
-    
+
     return this.client.post(`${this.url}/champomi`, champomi);
 
   }
@@ -45,13 +47,13 @@ export class HttpService {
   }
 
   deleteUser(id: number): Observable<Object> {
-    
+
     return this.client.delete(`${this.url}/users/${id}`);
 
   }
 
   postUser(ajouterUser: any): Observable<Object> {
-    
+
     return this.client.post(`${this.url}/users`, ajouterUser);
 
   }
@@ -73,7 +75,7 @@ export class HttpService {
   }
 
   postOrder(order: any): Observable<Object> {
-    
+
     return this.client.post(`${this.url}/orders`, order);
 
   }
