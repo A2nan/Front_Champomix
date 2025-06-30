@@ -6,6 +6,7 @@ import { ChatComponent } from './component/chat/chat.component';
 import { ChampomiListComponent } from './component/champomi-list/champomi-list.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 import { UserdetailComponent } from './component/user/userdetail/userdetail.component';
+import { CheckoutComponent } from './component/checkout/checkout.component';
 
 export const routes: Routes = [
     {
@@ -42,12 +43,18 @@ export const routes: Routes = [
         path: '404',
         pathMatch: 'full',
         component: PageNotFoundComponent
-    },     
+    },
 
     {
         path: 'commentaires',
         loadComponent: () => import('./component/Commentaires/commentaires.component').then(c => c.CommentairesComponent)
     },
+
+    {
+      path: 'checkout',
+      loadComponent: () => import('./component/checkout/checkout.component').then(c => c.CheckoutComponent)
+    }
+    ,
 
     {
         path: '**',
