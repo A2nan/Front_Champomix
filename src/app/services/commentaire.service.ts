@@ -12,7 +12,7 @@ export interface Commentaire {
   providedIn: 'root'
 })
 export class CommentaireService {
-  private apiUrl = 'http://localhost:3000/commentaires';
+  private apiUrl = '/api-comments/commentaires';
 
   constructor(private http: HttpClient) {}
 

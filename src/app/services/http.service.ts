@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environments';
 
 
 @Injectable({
@@ -10,12 +9,12 @@ import { environment } from '../../environments/environments';
 export class HttpService {
 
   private client: HttpClient = inject(HttpClient);
-  private readonly url: string = environment.apiUrl;
+  private readonly url: string = '/api-main';
 
   constructor() { }
 
   getChampomi(): Observable<Object> {
-    return this.client.get(`${this.url}/champomi`); // Endpoint complet
+    return this.client.get(`${this.url}/champomi/`); // Endpoint complet
   }
 
   getOneChampomi(id: number): Observable<Object> {
@@ -32,12 +31,12 @@ export class HttpService {
 
   postChampomi(champomi: any): Observable<Object> {
 
-    return this.client.post(`${this.url}/champomi`, champomi);
+    return this.client.post(`${this.url}/champomi/`, champomi);
 
   }
 
   getUser(): Observable<Object> {
-    return this.client.get(`${this.url}/users`); // Endpoint complet
+    return this.client.get(`${this.url}/users/`); // Endpoint complet
   }
 
   getOneUser(id: number): Observable<Object> {
@@ -54,12 +53,12 @@ export class HttpService {
 
   postUser(ajouterUser: any): Observable<Object> {
 
-    return this.client.post(`${this.url}/users`, ajouterUser);
+    return this.client.post(`${this.url}/users/`, ajouterUser);
 
   }
 
   getOrder(): Observable<Object> {
-    return this.client.get(`${this.url}/orders`); // Endpoint complet
+    return this.client.get(`${this.url}/orders/`); // Endpoint complet
   }
 
   getOneOrder(id: number): Observable<Object> {
@@ -75,9 +74,11 @@ export class HttpService {
   }
 
   postOrder(order: any): Observable<Object> {
-
-    return this.client.post(`${this.url}/orders`, order);
-
+    const orderData = { ...order };
+    if (orderData.champomi_ids && typeof orderData.champomi_ids === 'string') {
+      orderData.champomi_ids = orderData.champomi_ids.split(',').map((id: string) => parseInt(id.trim(), 10));
+    }
+    return this.client.post(`${this.url}/orders/`, orderData);
   }
 
 }
