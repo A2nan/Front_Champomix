@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class HttpService {
 
   private client: HttpClient = inject(HttpClient);
-  private readonly url: string = '/api-main';
+  private readonly url: string = 'https://tp-web-api-rest.onrender.com/';
 
   constructor() { }
 
