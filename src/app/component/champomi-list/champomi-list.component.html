@@ -134,12 +134,15 @@
       <h2>Champomis</h2>
 
       <h3>Add New Champomi</h3>
-      <form (ngSubmit)="createChampomi(ajouterChampomi)">
+      <form (ngSubmit)="createChampomi()">
         <label for="champomi-name">Name:</label>
-        <input type="text" id="champomi-name" (ngModel)="ajouterChampomi" name="name" required>
+        <input type="text" id="champomi-name" [(ngModel)]="ajouterChampomi.name" name="name" required>
+
+        <label for="champomi-price">Price:</label>
+        <input type="number" id="champomi-price" [(ngModel)]="ajouterChampomi.price" name="price" required>
 
         <label for="champomi-description">Description:</label>
-        <input type="text" id="champomi-description" (ngModel)="ajouterChampomi" name="description" required>
+        <input type="text" id="champomi-description" [(ngModel)]="ajouterChampomi.description" name="description">
 
         <button type="submit">Add Champomi</button>
       </form>
@@ -165,12 +168,12 @@
       <h2>Users</h2>
 
       <h3>Add New User</h3>
-      <form (ngSubmit)="createUser(ajouterUser)">
+      <form (ngSubmit)="createUser()">
         <label for="pseudo">Pseudo:</label>
-        <input type="text" id="pseudo" (ngModel)="ajouterUser" name="pseudo" required>
+        <input type="text" id="pseudo" [(ngModel)]="ajouterUser.pseudo" name="pseudo" required>
 
         <label for="password">Password:</label>
-        <input type="password" id="password" (ngModel)="ajouterUser" name="password" required>
+        <input type="password" id="password" [(ngModel)]="ajouterUser.password" name="password" required>
 
         <button type="submit">Create User</button>
       </form>
@@ -196,12 +199,12 @@
       <h2>Orders</h2>
 
       <h3>Add New Order</h3>
-      <form (ngSubmit)="createOrder(ajouterOrder)">
-        <label for="order-id">Order ID:</label>
-        <input type="text" id="order-id" (ngModel)="ajouterOrder" name="id" required>
-
+      <form (ngSubmit)="createOrder()">
         <label for="user-id">User ID:</label>
-        <input type="text" id="user-id" (ngModel)="ajouterOrder" name="user_id" required>
+        <input type="number" id="user-id" [(ngModel)]="ajouterOrder.user_id" name="user_id" required>
+        
+        <label for="champomi-ids">Champomi IDs (comma-separated):</label>
+        <input type="text" id="champomi-ids" [(ngModel)]="ajouterOrder.champomi_ids" name="champomi_ids" required>
 
         <button type="submit">Add Order</button>
       </form>

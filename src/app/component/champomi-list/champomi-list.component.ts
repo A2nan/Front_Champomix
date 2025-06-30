@@ -83,21 +83,24 @@ export class ChampomiListComponent implements OnInit {
     });
   }
 
-  createChampomi(ajouterChampomi: any): void {
-    this.httpService.postChampomi(ajouterChampomi).subscribe(() => {
+  createChampomi(): void {
+    this.httpService.postChampomi(this.ajouterChampomi).subscribe(() => {
       this.loadChampomis();
+      this.ajouterChampomi = {}; 
     });
   }
 
-  createUser(ajouterUser: any): void {
-    this.httpService.postUser(ajouterUser).subscribe(() => {
+  createUser(): void {
+    this.httpService.postUser(this.ajouterUser).subscribe(() => {
       this.loadUsers();
+      this.ajouterUser = {};
     });
   }
 
-  createOrder(ajouterOrder: any): void {
-    this.httpService.postOrder(ajouterOrder).subscribe(() => {
+  createOrder(): void {
+    this.httpService.postOrder(this.ajouterOrder).subscribe(() => {
       this.loadOrders();
+      this.ajouterOrder = {};
     });
   }
 }
