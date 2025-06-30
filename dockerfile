@@ -10,8 +10,8 @@ COPY . .
 # Installation des dépendances
 RUN npm install
 
-# Compilation Angular avec baseHref personnalisé pour servir sur /champomix/
-RUN npm run build -- --base-href /champomix/
+# Compilation Angular avec baseHref personnalisé pour servir sur /
+RUN npm run build -- --base-href /
 
 # 🔍 Debug (facultatif) — permet de voir les fichiers générés
 RUN ls -l /app/dist/angular_project2
