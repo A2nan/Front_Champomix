@@ -6,6 +6,7 @@ import { ChatComponent } from './component/chat/chat.component';
 import { ChampomiListComponent } from './component/champomi-list/champomi-list.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 import { UserdetailComponent } from './component/user/userdetail/userdetail.component';
+import { CheckoutComponent } from './component/checkout/checkout.component';
 
 export const routes: Routes = [
     {
@@ -37,6 +38,10 @@ export const routes: Routes = [
         path: 'chat',
         pathMatch: 'full',
         component: ChatComponent
+    },
+    {
+        path: 'checkout',
+        component: CheckoutComponent
     },
     {
         path: '404',

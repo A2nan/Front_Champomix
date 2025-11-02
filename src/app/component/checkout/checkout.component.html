@@ -1,0 +1,71 @@
+<div class="checkout-container">
+  <div class="checkout-card">
+    <!-- Écran de checkout -->
+    <div *ngIf="status === 'checkout'">
+      <h2>Finaliser votre commande</h2>
+      
+      <div *ngIf="error" class="error-message">
+        {{ error }}
+      </div>
+
+      <div class="items-list" *ngIf="items.length > 0">
+        <h3>Vos articles</h3>
+        <div class="item" *ngFor="let item of items">
+          <div class="item-info">
+            <span class="item-name">{{ item.name || 'Produit' }}</span>
+            <span class="item-price">{{ (item.price || item.amount || 1000) / 100 }}€</span>
+          </div>
+          <span class="item-quantity">Quantité: {{ item.quantity || 1 }}</span>
+        </div>
+        <div class="total">
+          <strong>Total: {{ getTotal() / 100 }}€</strong>
+        </div>
+      </div>
+
+      <div *ngIf="items.length === 0" class="empty-cart">
+        <p>Votre panier est vide</p>
+        <button (click)="goBack()" class="btn-secondary">Retour aux produits</button>
+      </div>
+
+      <div class="checkout-actions" *ngIf="items.length > 0">
+        <button 
+          (click)="proceedToPayment()" 
+          [disabled]="loading" 
+          class="btn-primary">
+          <svg *ngIf="!loading" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+          </svg>
+          <span *ngIf="loading">
+            <svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+            Traitement...
+          </span>
+          <span *ngIf="!loading">Payer avec Stripe</span>
+        </button>
+        <button (click)="goBack()" class="btn-secondary">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+          Annuler
+        </button>
+      </div>
+    </div>
+
+    <!-- Écran de succès -->
+    <div *ngIf="status === 'success'" class="success-screen">
+      <div class="success-icon">✓</div>
+      <h2>Paiement réussi !</h2>
+      <p>Merci pour votre achat. Votre commande a été traitée avec succès.</p>
+      <button (click)="goBack()" class="btn-primary">Retour à l'accueil</button>
+    </div>
+
+    <!-- Écran d'annulation -->
+    <div *ngIf="status === 'cancel'" class="cancel-screen">
+      <div class="cancel-icon">✕</div>
+      <h2>Paiement annulé</h2>
+      <p>Votre paiement a été annulé. Aucun montant n'a été débité.</p>
+      <button (click)="goBack()" class="btn-primary">Retour aux produits</button>
+    </div>
+  </div>
+</div>
